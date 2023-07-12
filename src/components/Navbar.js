@@ -152,15 +152,15 @@ export default function Navbar() {
                 <p>Messages</p>
             </MenuItem> */
 
-    const { user } = useSelector((state) => state.data);
-  console.log("cart data", user);
+  const result = useSelector((state) => state.data);
+  console.log("cart data", result);
   <MenuItem>
     <IconButton
       size="large"
-      aria-label="{user.length}"
+      aria-label="show 17 new notifications"
       color="inherit"
     >
-      <Badge badgeContent="{user.length}" color="error">
+      <Badge badgeContent={result.length} color="error">
         <AddShoppingCartIcon />
       </Badge>
     </IconButton>
@@ -172,6 +172,18 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ bgcolor: "white" }}>
+        <Typography
+          sx={{
+            bgcolor: "black",
+            display: "flex",
+            justifyContent: "center",
+            fontSize: 11,
+            padding: 1.5,
+          }}
+        >
+          Introducing M0.0NSHOT, the world’s first net zero carbon shoe.
+          Arriving Spring 2024. Learn More.
+        </Typography>
         <Toolbar sx={{ height: 60 }}>
           <Button
             sx={{ color: "black" }}
@@ -189,9 +201,9 @@ export default function Navbar() {
           >
             WOMEN
           </Button>
-          {/* <Button sx={{ color: "black" }}>KIDS</Button>
+          <Button sx={{ color: "black" }}>KIDS</Button>
 
-          <Button sx={{ color: "black" }}>SALE</Button> */}
+          <Button sx={{ color: "black" }}>SALE</Button>
 
           <Link to="/">
             <div>
@@ -211,7 +223,7 @@ export default function Navbar() {
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {/************ AddShoppingCartIcon *****************/}
             <Link to="/addcart">
-              <IconButton size="large" aria-label="notifications">
+              <IconButton size="large" aria-label="show 17 new notifications">
                 <AddShoppingCartIcon />
               </IconButton>
             </Link>
